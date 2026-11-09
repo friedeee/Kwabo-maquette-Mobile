@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr" data-app="admin">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administration · KWABO</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#123F28">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <div id="root"></div>
+
+    <dialog id="dialog" aria-labelledby="dialog-heading">
+        <button class="dialog-close" type="button" data-action="closeDialog" aria-label="Fermer"></button>
+        <div id="dialog-body"></div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="js/icons.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/events.js"></script>
+</body>
+</html>

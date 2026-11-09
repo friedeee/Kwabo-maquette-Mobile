@@ -1,0 +1,47 @@
+/* Page de présentation de l'application : le cadre du téléphone et les deux panneaux. */
+@font-face { font-family: 'Fraunces'; src: url('../assets/fonts/fraunces-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Fraunces'; src: url('../assets/fonts/fraunces-latin-wght-italic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Inter'; src: url('../assets/fonts/inter-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+:root { --phone-height: min(760px, calc(100vh - 40px)); }
+* { box-sizing: border-box; }
+body { margin: 0; background: #123f28 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23f5c842' stroke-opacity='.07' stroke-width='1.5'%3E%3Cpath d='M36 4 68 36 36 68 4 36Z'/%3E%3Cpath d='M36 20 52 36 36 52 20 36Z'/%3E%3C/g%3E%3C/svg%3E"); color: #dcebe2; font: 400 15px/1.55 'Inter', system-ui, sans-serif; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #f5c842; outline-offset: 2px; }
+.preview { display: grid; grid-template-columns: minmax(250px, 1fr) auto minmax(250px, 1fr); gap: 36px; align-items: center; justify-items: center; min-height: 100vh; padding: 14px 28px; }
+.preview-panel { width: min(320px, 100%); max-height: calc(100vh - 28px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .3) transparent; }
+.preview-logo { display: inline-flex; align-items: center; gap: 8px; color: #fff; font: 700 20px/1 'Fraunces', serif; text-decoration: none; }
+.preview-logo span { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: #f5c842; color: #123f28; }
+.preview-logo i { margin-left: -8px; color: #f5c842; font-style: normal; }
+.preview-panel h1 { margin: 14px 0 6px; color: #fff; font: 600 32px/1.1 'Fraunces', serif; }
+.preview-panel h1 em { color: #f5c842; font-weight: 500; }
+.preview-panel h2 { margin: 0 0 6px; color: #fff; font: 600 18px/1.25 'Fraunces', serif; }
+.preview-panel p { margin: 0 0 10px; }
+.preview-panel section { padding: 18px; margin-bottom: 14px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .13); border-radius: 20px; }
+.preview-panel code { color: #f5c842; font-size: 14px; }
+.preview-screens { display: grid; gap: 0; margin-top: 4px; }
+.preview-screens p { margin: 8px 0 1px; color: #f5c842; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.preview-screens button { padding: 3px 10px; border: 0; border-radius: 10px; background: none; color: #dcebe2; font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
+.preview-screens button:hover { background: rgba(255, 255, 255, .1); color: #fff; }
+.preview-screens button[aria-current] { background: #f5c842; color: #123f28; font-weight: 600; }
+.preview-buttons { display: grid; gap: 6px; }
+.preview-btn { display: block; width: 100%; padding: 9px 14px; border: 1.5px solid rgba(255, 255, 255, .5); border-radius: 100px; background: none; color: #fff; font: 600 14px/1.2 'Inter', sans-serif; text-align: center; text-decoration: none; cursor: pointer; }
+.preview-btn:hover { background: rgba(255, 255, 255, .12); }
+.preview-btn-gold { border-color: #f5c842; background: #f5c842; color: #1a1f1b; }
+.preview-btn-gold:hover { background: #d4a017; border-color: #d4a017; }
+
+.phone { position: relative; display: flex; flex-direction: column; width: 380px; height: var(--phone-height); padding: 10px; border-radius: 48px; background: #0c1f15; box-shadow: 0 24px 70px rgba(0, 0, 0, .45), inset 0 0 0 2px #2d4a3a; }
+.phone-status { position: relative; display: flex; justify-content: space-between; align-items: center; height: 38px; flex: none; padding: 0 24px; background: #1a4d30; border-radius: 38px 38px 0 0; color: #fff; font-size: 14px; font-weight: 600; }
+.phone-notch { position: absolute; left: 50%; top: 7px; transform: translateX(-50%); width: 92px; height: 24px; border-radius: 16px; background: #0c1f15; }
+.phone-signal { display: flex; align-items: flex-end; gap: 2px; }
+.phone-signal i { display: block; width: 3px; background: #fff; border-radius: 1px; }
+.phone-signal i:nth-child(1) { height: 4px; } .phone-signal i:nth-child(2) { height: 6px; } .phone-signal i:nth-child(3) { height: 8px; } .phone-signal i:nth-child(4) { height: 10px; }
+.phone-signal b { display: block; width: 22px; height: 11px; margin-left: 5px; border: 1.5px solid #fff; border-radius: 3px; background: linear-gradient(90deg, #fff 70%, transparent 70%); }
+.phone iframe { flex: 1; width: 360px; min-height: 0; border: 0; background: #f9f7f4; }
+.phone-home { flex: none; display: grid; place-items: center; height: 22px; background: #fff; border-radius: 0 0 38px 38px; }
+.phone-home::after { content: ''; width: 116px; height: 5px; border-radius: 3px; background: rgba(26, 31, 27, .4); }
+
+@media (max-width: 1120px) {
+    .preview { grid-template-columns: minmax(0, 1fr); padding-block: 20px; }
+    .phone { order: -1; }
+    .preview-panel { width: min(560px, 100%); max-height: none; overflow: visible; }
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Application mobile · KWABO</title>
+    <meta name="theme-color" content="#1A4D30">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <script>
+        /* Sur un vrai téléphone, pas de cadre : l'application occupe tout l'écran. */
+        if (window.matchMedia('(max-width: 480px)').matches) { location.replace('mobile-app.html'); }
+    </script>
+    <link rel="stylesheet" href="css/mobile-preview.css">
+</head>
+<body>
+    <div class="preview">
+        <aside class="preview-panel" aria-label="Écrans de l'application">
+            <a class="preview-logo" href="index.html"><span>K</span>KWABO<i>.</i></a>
+            <h1>Application <em>mobile</em></h1>
+            <p>Maquette des écrans iOS et Android. Tout est cliquable, comme sur un téléphone.</p>
+            <nav id="screens" class="preview-screens"></nav>
+        </aside>
+
+        <div class="phone">
+            <div class="phone-status" aria-hidden="true"><span id="phone-clock">9:41</span><span class="phone-notch"></span><span class="phone-signal"><i></i><i></i><i></i><i></i><b></b></span></div>
+            <iframe id="app" src="mobile-app.html" title="Application mobile KWABO"></iframe>
+            <div class="phone-home" aria-hidden="true"></div>
+        </div>
+
+        <aside class="preview-panel" aria-label="Essayer l'application">
+            <section>
+                <h2>Compte de démonstration</h2>
+                <p><code>client@kwabo.demo</code><br><code>Demo1234</code></p>
+                <button id="demo-login" class="preview-btn preview-btn-gold" type="button">Se connecter en un clic</button>
+            </section>
+            <section>
+                <h2>Notifications push</h2>
+                <p>Le cahier des charges prévoit une notification à chaque étape. Simulez-en une :</p>
+                <div id="push-buttons" class="preview-buttons"></div>
+            </section>
+            <section>
+                <h2>Essai avec l'administration</h2>
+                <p>Ouvrez l'administration dans un autre onglet, et changez le statut d'une demande d'Aïcha : la notification arrive ici.</p>
+                <a class="preview-btn" href="admin.html" target="_blank" rel="noopener">Ouvrir l'administration</a>
+            </section>
+        </aside>
+    </div>
+    <script src="js/mobile-preview.js"></script>
+</body>
+</html>
